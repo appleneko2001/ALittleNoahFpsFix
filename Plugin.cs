@@ -33,14 +33,12 @@ public partial class ALittleNoahFix : BasePlugin
     [HarmonyPatch]
     public class MousePatches
     {
-        // NOTE: This doesn't seem to work at the moment. If it did, that would be great, so I could see where my cursor is in UnityExplorer.
-        [HarmonyPatch(typeof(WindowsPlatformService), nameof(WindowsPlatformService.SetupTransparentCursor)), HarmonyPrefix]
-        public static bool NOPTransparentCursor()
+        [HarmonyPatch(typeof(Engine), nameof(Engine.OnPostLateUpdate)), HarmonyPostfix]
+        public static void PatchCursorAlwaysUnlocked()
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            return false;
+            Cursor.SetCursor(null, CursorMode.Auto);
         }
     }
 
