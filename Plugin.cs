@@ -61,11 +61,8 @@ public partial class ALittleNoahFix : BasePlugin
 
             if (throttle > 0)
             {
-                if (Application.targetFrameRate == throttle)
-                    return false;
-
+                QualitySettings.vSyncCount = 0;
                 Application.targetFrameRate = throttle;
-                Debug.Log($"Throttler applied");
                 return false;
             }
 
