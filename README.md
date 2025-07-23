@@ -1,5 +1,11 @@
+<!-- the fork repo owner is stupid asf, borked main branch and gonna make alt to commit changes again -->
 # ALittleNoahFpsFix
 A fork of [KingKrouch's ALittleNoahFix](https://github.com/KingKrouch/ALittleNoahFix), but everything have been removed except framerate unlocker feature remains and improved a bit.
+
+# Patches
+* Cursor will always not being hidden (was borked in upstream repo)
+* Framerate will no more locked max at 60 FPS
+* Framerate will be lowed to 30 FPS if the game window is inactive (not focused, beta)
 
 # Compile
 
